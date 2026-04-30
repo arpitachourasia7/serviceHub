@@ -1,0 +1,211 @@
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.register-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+}
+
+.register-error {
+    background: #fee;
+    color: #c00;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-input,
+.register-select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.register-input:focus,
+.register-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.register-select {
+    background: white;
+    cursor: pointer;
+}
+
+.register-btn {
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background: #218838;
+}
+
+.register-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.register-footer a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Updated Register.css for Modal */
+.register-modal-container {
+    padding: 30px;
+}
+
+.register-modal-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-size: 1.5rem;
+}
+
+.register-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.register-modal-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-modal-container input,
+.register-modal-container select {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.register-modal-container input:focus,
+.register-modal-container select:focus {
+    outline: none;
+    border-color: #B87333;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.1);
+}
+
+.register-modal-container button[type="submit"] {
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.register-modal-container button[type="submit"]:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.register-modal-container button[type="submit"]:disabled {
+    opacity: 0.6;
+    transform: none;
+    cursor: not-allowed;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-link-btn {
+    background: none;
+    border: none;
+    color: #B87333;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.register-link-btn:hover {
+    color: #8B5A2B;
+}
+
+.register-password-policy {
+    font-size: 0.85rem;
+    color: #444;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.register-error {
+    background: #fee;
+    color: #e74c3c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}

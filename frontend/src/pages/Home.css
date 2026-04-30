@@ -1,0 +1,674 @@
+/* Home Container */
+.home-container {
+    min-height: 100vh;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.logo-text span {
+    color: #B87333;
+}
+
+.home-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    background: transparent;
+    border: 1px solid #333;
+    color: #333;
+    padding: 8px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: #333;
+    color: white;
+}
+
+.nav-logout {
+    background: #dc2626;
+    border: none;
+    color: white;
+}
+
+.nav-logout:hover {
+    background: #b91c1c;
+}
+
+.nav-register {
+    background: #1a1a1a;
+    border: none;
+    color: white;
+}
+
+.nav-register:hover {
+    background: #333;
+}
+
+/* Hero Section */
+.home-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #B87333;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle span {
+    font-weight: 600;
+    color: #B87333;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero-book-btn {
+    background: #1a1a1a;
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.hero-book-btn:hover {
+    background: #333;
+    transform: translateY(-3px);
+}
+
+.hero-partner-btn {
+    background: transparent;
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
+    padding: 14px 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.hero-partner-btn:hover {
+    background: #1a1a1a;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Services Section */
+.home-services {
+    padding: 60px 50px;
+    background: #ffffff;
+}
+
+.services-title {
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+    border: 1px solid #e0e0e0;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.service-btn:hover {
+    background: #1a1a1a;
+    color: white;
+}
+
+.login-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999;
+}
+
+.login-modal {
+    width: min(460px, 100%);
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.2);
+}
+
+.login-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.login-modal-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.login-close {
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.login-modal-subtitle {
+    margin-bottom: 18px;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.login-error {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-size: 0.95rem;
+}
+
+.login-form {
+    display: grid;
+    gap: 16px;
+}
+
+.login-form label {
+    display: grid;
+    gap: 10px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.login-form input {
+    width: 93%;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    padding: 13px 13px;
+    font-size: 1rem;
+    color: #111827;
+    background: #f8fafc;
+}
+
+.login-submit {
+    width: 100%;
+    margin-top: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Register Modal Styles */
+.register-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.register-modal-content {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.register-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+    z-index: 10;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-modal-close:hover {
+    color: #e74c3c;
+}
+
+/* Login Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link-btn {
+    background: none;
+    border: none;
+    color: #B87333;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.login-link-btn:hover {
+    color: #8B5A2B;
+}
+
+/* Add these to your existing Home.css */
+
+/* Login Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link-btn {
+    background: none;
+    border: none;
+    color: #B87333;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.login-link-btn:hover {
+    color: #8B5A2B;
+}
+
+/* Register Modal Styles */
+.register-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.register-modal {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.register-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px 15px 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.register-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.register-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-close:hover {
+    color: #e74c3c;
+}
+
+.register-modal-subtitle {
+    padding: 0 30px;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    padding: 0 30px 30px 30px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.register-form input,
+.register-form select {
+    width: 94%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    outline: none;
+    border-color: #B87333;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.1);
+}
+
+.register-error {
+    background: #fee;
+    color: #e74c3c;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 0 30px 20px 30px;
+    font-size: 0.9rem;
+    border-left: 3px solid #e74c3c;
+}
+
+.register-submit {
+    width: 100%;
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.register-submit:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.register-submit:disabled {
+    opacity: 0.6;
+    transform: none;
+    cursor: not-allowed;
+}
+
+.register-footer {
+    text-align: center;
+    padding: 20px 30px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-link-btn {
+    background: none;
+    border: none;
+    color: #B87333;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.register-link-btn:hover {
+    color: #8B5A2B;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-services {
+        padding: 40px 20px;
+    }
+}
