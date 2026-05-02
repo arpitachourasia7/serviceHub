@@ -555,9 +555,19 @@ function Chat() {
     return (
         <div className="chat-page">
             <div className="chat-header">
-                <div className="logo" onClick={() => navigate('/')}>
+                {/* <div className="logo" onClick={() => navigate('/')}>
                     🛠️ ServiceHub
+                </div> */}
+
+
+                <div className="logo" onClick={() => navigate('/')}>
+                    <span className="logo-icon">🛠️</span>
+                    <span className="logo-service">Service</span>
+                    <span className="logo-hub">Hub</span>
                 </div>
+
+
+
                 <div className="nav">
                     <button onClick={() => navigate('/services')}>Services</button>
                     <button onClick={() => navigate('/bookings')}>Bookings</button>

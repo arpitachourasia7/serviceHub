@@ -519,9 +519,9 @@ function Reviews() {
                     <button onClick={() => navigate('/services')} className="nav-btn">Services</button>
                     <button onClick={() => navigate('/bookings')} className="nav-btn">Bookings</button>
                     <button onClick={() => navigate('/chat')} className="nav-btn">Chat</button>
-                    {userRole === 'provider' && (
-                        <button onClick={() => navigate('/provider/services')} className="nav-add">+ Add Service</button>
-                    )}
+                    {/* {userRole === 'provider' && (
+                        <button onClick={() => navigate('/provider/services')} className="nav-add">+ Add Service</button> */}
+                    {/* )} */}
                     <button onClick={logout} className="nav-logout">Logout</button>
                 </div>
             </div>
