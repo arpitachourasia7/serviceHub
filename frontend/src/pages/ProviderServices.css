@@ -1,9 +1,7 @@
-/* 
 .provider-services-container {
     min-height: 100vh;
     background: linear-gradient(135deg, #f8f9fc 0%, #f0f2f8 100%);
 }
-
 
 .provider-header {
     display: flex;
@@ -58,13 +56,11 @@
     background: #ff5722;
 }
 
-
 .provider-services-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.8rem;
 }
-
 
 .services-header-section {
     display: flex;
@@ -103,13 +99,11 @@
     box-shadow: 0 4px 12px rgba(44, 125, 160, 0.3);
 }
 
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
-
 
 .service-card {
     border-radius: 16px;
@@ -150,450 +144,12 @@
     border-bottom: 3px solid #f1948a;
 }
 
-.service-card:nth-child(6) {
-    background: linear-gradient(135deg, #e8f8f5 0%, #d1f2eb 100%);
-    border-bottom: 3px solid #a3e4d7;
-}
-
-.service-card:nth-child(7) {
-    background: linear-gradient(135deg, #f5eef8 0%, #ebdef0 100%);
-    border-bottom: 3px solid #d7bde2;
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    display: inline-block;
-}
-
-.service-card h2 {
-    font-size: 1.2rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.service-description {
-    color: #5d6d7e;
-    line-height: 1.5;
-    margin-bottom: 0.8rem;
-    font-size: 0.8rem;
-    opacity: 0.9;
-}
-
-.service-price {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #2c7da0;
-    margin: 0.8rem 0;
-    display: flex;
-    align-items: baseline;
-    gap: 3px;
-}
-
-.service-price::before {
-    content: '₹';
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #2c7da0;
-}
-
-.service-actions {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-
-.service-actions {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-.edit-btn {
-    flex: 1;
-    padding: 7px 14px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: rgba(80, 126, 185, 0.8);
-    color: white;
-    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
-
-
-}
-
-.delete-btn {
-    flex: 1;
-    padding: 7px 14px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-
-
-.delete-btn {
-    background: rgba(80, 126, 185, 0.8);
-    color: white;
-}
-
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 450px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    animation: modalSlideIn 0.25s ease;
-}
-
-@keyframes modalSlideIn {
-    from {
-        transform: scale(0.95);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.modal-content h2 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.modal-content form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.modal-content input,
-.modal-content textarea,
-.modal-content select {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-}
-
-.modal-content input:focus,
-.modal-content textarea:focus,
-.modal-content select:focus {
-    outline: none;
-    border-color: #6c8fb3;
-    box-shadow: 0 0 0 2px rgba(44, 125, 160, 0.1);
-}
-
-.modal-content textarea {
-    min-height: 80px;
-    resize: vertical;
-}
-
-.modal-buttons {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-.save-btn,
-.cancel-btn {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-}
-
-.save-btn {
-    background: linear-gradient(135deg, #4caf50, #45a049);
-    color: white;
-}
-
-.save-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.25);
-}
-
-.cancel-btn {
-    background: #e8eef2;
-    color: #555;
-}
-
-.cancel-btn:hover {
-    background: #dce4ea;
-}
-
-.loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 1rem;
-    color: #2c7da0;
-}
-
-@media (max-width: 768px) {
-    .provider-services-content {
-        padding: 1rem;
-    }
-
-    .services-grid {
-        gap: 1rem;
-    }
-
-    .service-card {
-        padding: 1rem;
-    }
-
-    .service-card h2 {
-        font-size: 1rem;
-    }
-
-    .service-price {
-        font-size: 1rem;
-    }
-
-    .services-header-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .services-header-section h1 {
-        font-size: 1.3rem;
-    }
-
-    .nav button {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-    }
-
-    .manage-services-btn {
-        padding: 6px 14px;
-        font-size: 0.8rem;
-    }
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Provider Services Page - Light Pastel Colorful Cards */
-
-.provider-services-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fc 0%, #f0f2f8 100%);
-}
-
-/* Header */
-.provider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #2c7da0;
-    cursor: pointer;
-}
-
-.logo span {
-    color: #000;
-}
-
-.nav {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.nav button {
-    background: transparent;
-    border: none;
-    padding: 6px 14px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    color: #444;
-}
-
-.nav button:hover {
-    background: #e8eef2;
-    transform: translateY(-1px);
-}
-
-.nav .logout-btn {
-    background: #ff6b35;
-    color: white;
-}
-
-.nav .logout-btn:hover {
-    background: #ff5722;
-}
-
-/* Main Content */
-.provider-services-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.8rem;
-}
-
-/* Header Section */
-.services-header-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.8rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.services-header-section h1 {
-    font-size: 1.6rem;
-    color: #2c3e50;
-    margin: 0;
-    font-weight: 600;
-}
-
-/* Manage Services Button */
-.manage-services-btn {
-    background: linear-gradient(135deg, #2c7da0, #1f5e7a);
-    color: white;
-    border: none;
-    padding: 8px 18px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 8px rgba(44, 125, 160, 0.2);
-}
-
-.manage-services-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(44, 125, 160, 0.3);
-}
-
-/* Services Grid */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Light Pastel Colorful Cards */
-.service-card {
-    border-radius: 16px;
-    padding: 1.3rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Card 1 - Plumbing (Very Light Pastel Blue) */
-.service-card:nth-child(1) {
-    background: linear-gradient(135deg, #ebf5fb 0%, #d6eaf8 100%);
-    border-bottom: 3px solid #85c1e9;
-}
-
-/* Card 2 - Electrical (Very Light Pastel Yellow) */
-.service-card:nth-child(2) {
-    background: linear-gradient(135deg, #fef9e7 0%, #fdebd0 100%);
-    border-bottom: 3px solid #f5cba7;
-}
-
-/* Card 3 - Home Service (Very Light Pastel Green) */
-.service-card:nth-child(3) {
-    background: linear-gradient(135deg, #eafaf1 0%, #d5f5e3 100%);
-    border-bottom: 3px solid #abebc6;
-}
-
-/* Card 4 - Cleaning (Very Light Pastel Purple) */
-.service-card:nth-child(4) {
-    background: linear-gradient(135deg, #f4ecf7 0%, #e8daef 100%);
-    border-bottom: 3px solid #d2b4de;
-}
-
-/* Card 5 - Beauty (Very Light Pastel Pink) */
-.service-card:nth-child(5) {
-    background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
-    border-bottom: 3px solid #f1948a;
-}
-
-/* Service Icon - SMALLER */
 .service-icon {
     font-size: 1.8rem;
     margin-bottom: 0.6rem;
     display: inline-block;
 }
 
-/* Service Name */
 .service-card h2 {
     font-size: 1.2rem;
     color: #2c3e50;
@@ -601,7 +157,6 @@
     font-weight: 600;
 }
 
-/* Description */
 .service-description {
     color: #5d6d7e;
     line-height: 1.5;
@@ -610,7 +165,6 @@
     opacity: 0.9;
 }
 
-/* Price - CENTERED and NO "hour" text */
 .service-price {
     font-size: 1.3rem;
     font-weight: 700;
@@ -630,19 +184,16 @@
     color: #2c7da0;
 }
 
-/* Remove the "/hour" text - hide it if exists */
 .price-unit {
     display: none;
 }
 
-/* Action Buttons */
 .service-actions {
     display: flex;
     gap: 0.8rem;
     margin-top: 0.8rem;
 }
 
-/* Both buttons - Same Coral/Red color */
 .edit-btn,
 .delete-btn {
     flex: 1;
@@ -662,7 +213,6 @@
 
 
 
-/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -773,7 +323,6 @@
     background: #dce4ea;
 }
 
-/* Loading */
 .loading {
     display: flex;
     justify-content: center;
@@ -783,7 +332,6 @@
     color: #2c7da0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .provider-services-content {
         padding: 1rem;

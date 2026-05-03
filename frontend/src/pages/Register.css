@@ -103,7 +103,6 @@
 
 
 
-/* Updated Register.css for Modal */
 .register-modal-container {
     padding: 30px;
 }
@@ -191,13 +190,6 @@
 
 .register-link-btn:hover {
     color: #8B5A2B;
-}
-
-.register-password-policy {
-    font-size: 0.85rem;
-    color: #444;
-    margin: 8px 0 12px;
-    line-height: 1.4;
 }
 
 .register-error {

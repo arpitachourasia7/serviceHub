@@ -3,7 +3,7 @@ from .models import Review
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ['id', 'customer', 'rating', 'comment_preview', 'created_at']  # Removed 'service'
+    list_display = ['id', 'customer', 'rating', 'comment_preview', 'created_at']  
     list_filter = ['rating', 'created_at']
     search_fields = ['customer__email', 'customer__username', 'comment']
     readonly_fields = ['id', 'created_at']

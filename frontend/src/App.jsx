@@ -8,10 +8,6 @@ import Reviews from './pages/Reviews';
 import Chat from './pages/Chat';
 import ProviderServices from './pages/ProviderServices';
 
-// function PrivateRoute({ children }) {
-//   const token = localStorage.getItem('access_token');
-//   return token ? children : <Navigate to="/" replace />;
-// }
 
 function PrivateRoute({ children, providerOnly = false }) {
   const token = localStorage.getItem('access_token');

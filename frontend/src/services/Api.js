@@ -1,22 +1,3 @@
-// import axios from 'axios';
-
-// const api = axios.create({
-//     //baseURL: 'http://localhost:8000/api',
-//     baseURL: '/api'
-// });
-
-// api.interceptors.request.use((config) => {
-//     const token = localStorage.getItem('access_token');
-//     if (token) {
-//         config.headers.Authorization = `Bearer ${token}`;
-//     }
-//     return config;
-// });
-
-// export default api;
-
-
-
 import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
@@ -28,7 +9,6 @@ const api = axios.create({
     },
 });
 
-// Request interceptor to add auth token
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('access_token');
@@ -40,7 +20,6 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// Response interceptor for token refresh
 api.interceptors.response.use(
     (response) => response,
     async (error) => {

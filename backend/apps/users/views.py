@@ -1,85 +1,3 @@
-# from rest_framework import status, generics, permissions
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-# from django.contrib.auth import authenticate
-# from .models import User
-# from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
-# from rest_framework_simplejwt.tokens import RefreshToken
-
-
-# class RegisterView(generics.CreateAPIView):
-#     queryset = User.objects.all()
-#     permission_classes = (permissions.AllowAny,)
-#     serializer_class = RegisterSerializer
-    
-#     def create(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.save()
-        
-
-#         refresh = RefreshToken.for_user(user)
-        
-#         return Response({
-#             'user': UserSerializer(user).data,
-#             'access': str(refresh.access_token),
-#             'refresh': str(refresh),
-#             'message': 'User created successfully'
-#         }, status=status.HTTP_201_CREATED)
-
-# class LoginView(APIView):
-#     permission_classes = (permissions.AllowAny,)
-    
-#     def post(self, request):
-#         serializer = LoginSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-        
-#         user = authenticate(
-#             username=serializer.validated_data['username'],
-#             password=serializer.validated_data['password']
-#         )
-        
-#         if user:
-
-#             refresh = RefreshToken.for_user(user)
-            
-#             return Response({
-#                 'access': str(refresh.access_token),
-#                 'refresh': str(refresh),
-#                 'user': UserSerializer(user).data,
-#                 'message': 'Login successful'
-#             })
-        
-#         return Response(
-#             {'error': 'Invalid credentials'}, 
-#             status=status.HTTP_401_UNAUTHORIZED
-#         )
-
-# class ProfileView(generics.RetrieveUpdateAPIView):
-#     permission_classes = (permissions.IsAuthenticated,)
-#     serializer_class = UserSerializer
-    
-#     def get_object(self):
-#         return self.request.user
-
-
-# class ProviderListView(generics.ListAPIView):
-#     serializer_class = UserSerializer
-#     permission_classes = (permissions.IsAuthenticated,)
-    
-#     def get_queryset(self):
-#         return User.objects.filter(role='provider')
-
-
-
-
-
-
-
-
-
-
-
 from rest_framework import status, generics, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -142,7 +60,6 @@ class LoginView(APIView):
         username_or_email = serializer.validated_data['username']
         password = serializer.validated_data['password']
 
-        # Allow users to login with either username or email
         user = None
         if '@' in username_or_email:
             user_obj = User.objects.filter(email__iexact=username_or_email).first()

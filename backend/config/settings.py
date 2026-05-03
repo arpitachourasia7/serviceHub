@@ -1,7 +1,3 @@
-"""
-Django settings for config project.
-"""
-
 from pathlib import Path
 from datetime import timedelta
 import os 

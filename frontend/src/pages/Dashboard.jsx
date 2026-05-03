@@ -43,7 +43,6 @@ function Dashboard() {
 
     return (
         <div className="dashboard-frame">
-            {/* Sidebar */}
             <div className="dashboard-sidebar">
                 <div className="sb-logo">
                     <div className="sb-logo-icon">🛠️</div>
@@ -82,7 +81,6 @@ function Dashboard() {
                 </div>
             </div>
 
-            {/* Main Content */}
             <div className="dashboard-main">
                 <div className="dashboard-topbar">
                     <div className="tb-title">Dashboard</div>
@@ -93,7 +91,6 @@ function Dashboard() {
                 </div>
 
                 <div className="dashboard-content">
-                    {/* Welcome Card */}
                     <div className="welcome-card">
                         <div className="deco-circle1"></div>
                         <div className="deco-circle2"></div>
@@ -111,7 +108,7 @@ function Dashboard() {
                         </div>
                     </div>
 
-                    {/* Stats Row */}
+
                     <div className="stats-row">
                         <div className="stat-card stat-card-1">
                             <div className="stat-accent">
@@ -147,7 +144,6 @@ function Dashboard() {
                         </div>
                     </div>
 
-                    {/* Decorative Banner */}
                     <div className="decorative-banner">
                         <div className="banner-content">
                             <span className="banner-icon">🎉</span>

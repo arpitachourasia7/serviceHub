@@ -1,125 +1,3 @@
-// import { useState } from 'react';
-// import api from '../services/api';
-// import './Register.css';
-
-// function Register({ onSuccess, onSwitchToLogin }) {
-//     const [formData, setFormData] = useState({
-//         username: '',
-//         email: '',
-//         password: '',
-//         role: 'customer'
-//     });
-//     const [error, setError] = useState('');
-//     const [loading, setLoading] = useState(false);
-
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-//         setError('');
-//         setLoading(true);
-
-//         // Validation
-//         if (!formData.username.trim()) {
-//             setError('Username is required');
-//             setLoading(false);
-//             return;
-//         }
-//         if (!formData.email.trim()) {
-//             setError('Email is required');
-//             setLoading(false);
-//             return;
-//         }
-//         if (!formData.password) {
-//             setError('Password is required');
-//             setLoading(false);
-//             return;
-//         }
-//         if (formData.password.length < 6) {
-//             setError('Password must be at least 6 characters');
-//             setLoading(false);
-//             return;
-//         }
-
-//         try {
-//             await api.post('/users/register/', formData);
-//             if (onSuccess) {
-//                 onSuccess();
-//             } else {
-//                 window.location.href = '/';
-//             }
-//         } catch (err) {
-//             setError(err.response?.data?.detail || 'Registration failed');
-//         } finally {
-//             setLoading(false);
-//         }
-//     };
-
-//     return (
-//         <div className="register-modal-container">
-//             <h2>Create Account</h2>
-//             <p className="register-subtitle">Join ServiceHub as a Customer or Provider</p>
-//             {error && <div className="register-error">{error}</div>}
-//             <form onSubmit={handleSubmit}>
-//                 <input
-//                     type="text"
-//                     placeholder="Username"
-//                     value={formData.username}
-//                     onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-//                     required
-//                 />
-//                 <input
-//                     type="email"
-//                     placeholder="Email"
-//                     value={formData.email}
-//                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-//                     required
-//                 />
-//                 <input
-//                     type="password"
-//                     placeholder="Password (min. 6 characters)"
-//                     value={formData.password}
-//                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-//                     required
-//                 />
-//                 <select
-//                     value={formData.role}
-//                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-//                 >
-//                     <option value="customer">Customer - Book Services</option>
-//                     <option value="provider">Service Provider - Offer Services</option>
-//                 </select>
-//                 <button type="submit" disabled={loading}>
-//                     {loading ? 'Creating Account...' : 'Register'}
-//                 </button>
-//             </form>
-//             <p className="register-footer">
-//                 Already have an account? <button type="button" onClick={onSwitchToLogin} className="register-link-btn">Login here</button>
-//             </p>
-//         </div>
-//     );
-// }
-
-// export default Register;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import { useState } from 'react';
 import api from '../services/api';
@@ -136,7 +14,7 @@ function Register({ onSuccess, onSwitchToLogin, onClose }) {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const passwordPolicy = 'Password must be at least 8 characters and include uppercase, lowercase, number, and special character.';
+    const passwordPolicy = '';
 
     const isStrongPassword = (password) => {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password);
@@ -147,7 +25,6 @@ function Register({ onSuccess, onSwitchToLogin, onClose }) {
         setError('');
         setLoading(true);
 
-        // Validation
         if (!formData.username.trim()) {
             setError('Username is required');
             setLoading(false);
@@ -175,12 +52,11 @@ function Register({ onSuccess, onSwitchToLogin, onClose }) {
         }
 
         try {
-            // Prepare data for backend
             const registrationData = {
                 username: formData.username,
                 email: formData.email,
                 password: formData.password,
-                password2: formData.password2,  // Include password2
+                password2: formData.password2,
                 role: formData.role
             };
 
@@ -188,7 +64,6 @@ function Register({ onSuccess, onSwitchToLogin, onClose }) {
             const response = await api.post('/users/register/', registrationData);
             console.log('Registration success:', response.data);
 
-            // Save tokens and user data from response
             if (response.data.access) {
                 localStorage.setItem('access_token', response.data.access);
                 localStorage.setItem('refresh_token', response.data.refresh);

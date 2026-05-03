@@ -3,27 +3,7 @@ from .models import Booking
 
 class BookingSerializer(serializers.ModelSerializer):
     customer_name = serializers.CharField(source='customer.username', read_only=True)
-    
-    
-    
-    
-    
-    
-    
-    
     service_price = serializers.DecimalField(source='service.price', read_only=True, max_digits=10, decimal_places=2)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     service_title = serializers.CharField(source='service.title', read_only=True)
     provider_name = serializers.CharField(source='service.provider.username', read_only=True)
     provider_id = serializers.CharField(source='service.provider.id', read_only=True)

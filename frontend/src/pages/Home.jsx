@@ -14,7 +14,6 @@ function Home() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // Control body scroll when modals open
     useEffect(() => {
         if (showLogin || showRegister) {
             document.body.classList.add('modal-open');
@@ -85,14 +84,11 @@ function Home() {
 
     const handleRegisterSuccess = () => {
         closeRegister();
-        // After registration, redirect to login or auto-login? 
-        // Your original code just redirected to home, so let's do that
         window.location.href = '/';
     };
 
     return (
         <div className="home-container">
-            {/* Header */}
             <div className="home-header">
                 <div className="home-logo">
                     <span className="logo-icon">🛠️</span>
@@ -117,8 +113,7 @@ function Home() {
                         Services
                     </button>
 
-                    {/* <button onClick={() => (token ? navigate('/reviews') : openLogin())} className="nav-link">Reviews</button>
-                    <button onClick={() => (token ? navigate('/chat') : openLogin())} className="nav-link">Chat</button> */}
+
                     {token ? (
                         <button onClick={logout} className="nav-link nav-logout">Logout</button>
                     ) : (
@@ -130,7 +125,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Hero Section */}
             <div className="home-hero">
                 <div className="hero-content">
                     <h1 className="hero-title">Home services at your doorstep</h1>
@@ -161,7 +155,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Services Section */}
             <div className="home-services">
                 <h2 className="services-title">Popular Services</h2>
                 <div className="services-grid">
@@ -256,7 +249,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Login Modal */}
             {showLogin && (
                 <div className="login-modal-overlay" onClick={closeLogin}>
                     <div className="login-modal" onClick={(e) => e.stopPropagation()}>
@@ -298,7 +290,6 @@ function Home() {
                 </div>
             )}
 
-            {/* Register Modal */}
             {showRegister && (
                 <div className="register-modal-overlay" onClick={closeRegister}>
                     <div className="register-modal-content" onClick={(e) => e.stopPropagation()}>
