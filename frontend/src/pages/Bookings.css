@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f7fa;
+}
+
+.bookings-header {
+    background: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.bookings-logo span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.bookings-nav {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.bookings-nav button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    color: #475569;
+}
+
+.bookings-nav button:hover {
+    background: #f1f5f9;
+    color: #2e7d32;
+}
+
+.bookings-nav .nav-logout {
+    background: #f97316;
+    color: white;
+}
+
+.bookings-nav .nav-logout:hover {
+    background: #e8590c;
+}
+
+.bookings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.bookings-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.bookings-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.btn-new-booking {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-new-booking:hover {
+    background: #1b5e20;
+}
+
+
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.filter-tab {
+    padding: 0.5rem 1.25rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-tab:hover {
+    background: #f1f5f9;
+    color: #2e7d32;
+}
+
+.filter-tab.active {
+    background: #2e7d32;
+    color: white;
+}
+
+.booking-form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.booking-form-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.booking-select,
+.booking-textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.booking-select:focus,
+.booking-textarea:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.btn-confirm {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-confirm:hover {
+    background: #1b5e20;
+}
+
+.btn-cancel-form {
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+}
+
+.btn-cancel-form:hover {
+    background: #e9ecef;
+}
+
+.bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+}
+
+.booking-card {
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.booking-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.service-name-centered {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-name-centered h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.booking-info {
+    margin-bottom: 1rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.info-row .value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.info-row .price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.info-row .date {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+.status-pending {
+    background: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fde68a;
+}
+
+.status-accepted {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+.status-completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.status-rejected {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.status-cancelled {
+    background: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.scheduled-date {
+    font-size: 0.7rem;
+    color: #2e7d32;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.booking-notes {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: #78350f;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-accept {
+    background: #10b981;
+    color: white;
+}
+
+.btn-accept:hover {
+    background: #059669;
+}
+
+.btn-reject {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-reject:hover {
+    background: #dc2626;
+}
+
+.btn-complete {
+    background: #8b5cf6;
+    color: white;
+}
+
+.btn-complete:hover {
+    background: #7c3aed;
+}
+
+.btn-cancel {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.btn-cancel:hover {
+    background: #fee2e2;
+}
+
+.btn-review {
+    background: #fef3c7;
+    color: #d97706;
+    border: 1px solid #fde68a;
+}
+
+.btn-review:hover {
+    background: #fde68a;
+}
+
+.bookings-empty {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    color: #64748b;
+}
+
+.btn-book-link {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-book-link:hover {
+    background: #1b5e20;
+}
+
+
+.bookings-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .bookings-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .bookings-container {
+        padding: 1rem;
+    }
+
+    .bookings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .filter-tab {
+        white-space: nowrap;
+    }
+
+    .service-name-centered h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
