@@ -297,7 +297,7 @@ function Chat() {
             wsRef.current.close();
         }
         localStorage.clear();
-        navigate('/login');
+        navigate('/');
     };
 
     return (

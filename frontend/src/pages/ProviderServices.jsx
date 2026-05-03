@@ -126,7 +126,7 @@ function ProviderServices() {
                             <div className="service-icon">{service.icon}</div>
                             <h2>{service.name}</h2>
                             <p className="service-description">{service.description}</p>
-                            <div className="service-price">₹{service.price}/hour</div>
+                            <div className="service-price">₹{service.price}</div>
                             <div className="service-actions">
                                 <button className="edit-btn" onClick={() => handleEdit(service)}>
                                     ✏️ Edit

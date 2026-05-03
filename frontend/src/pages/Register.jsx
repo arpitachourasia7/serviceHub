@@ -80,7 +80,6 @@ function Register({ onSuccess, onSwitchToLogin, onClose }) {
         } catch (err) {
             console.error('Registration error:', err.response?.data);
 
-            // Show detailed error message
             if (err.response?.data) {
                 const errorData = err.response.data;
                 if (typeof errorData === 'object') {

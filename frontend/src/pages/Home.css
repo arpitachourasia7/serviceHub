@@ -313,6 +313,19 @@
     margin-top: 6px;
 }
 
+.login-link-btn {
+    background: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 400;
+    transition: all 0.3s;
+
+}
+
 .register-modal-overlay {
     position: fixed;
     inset: 0;

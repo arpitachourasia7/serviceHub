@@ -70,7 +70,7 @@ function Home() {
 
             const userRole = response.data.user?.role || 'customer';
             if (userRole === 'provider') {
-                navigate('/provider/services');
+                navigate('/services');
             } else {
                 navigate('/services');
             }
@@ -100,7 +100,7 @@ function Home() {
                             if (token) {
                                 const role = localStorage.getItem('user_role');
                                 if (role === 'provider') {
-                                    navigate('/provider/services');
+                                    navigate('/services');
                                 } else {
                                     navigate('/services');
                                 }
@@ -135,7 +135,7 @@ function Home() {
                                 if (token) {
                                     const role = localStorage.getItem('user_role');
                                     if (role === 'provider') {
-                                        navigate('/provider/services');
+                                        navigate('/services');
                                     } else {
                                         navigate('/services');
                                     }
@@ -167,7 +167,7 @@ function Home() {
                                 if (token) {
                                     const role = localStorage.getItem('user_role');
                                     if (role === 'provider') {
-                                        navigate('/provider/services');
+                                        navigate('/services');
                                     } else {
                                         navigate('/services');
                                     }
@@ -211,7 +211,7 @@ function Home() {
                                 if (token) {
                                     const role = localStorage.getItem('user_role');
                                     if (role === 'provider') {
-                                        navigate('/provider/services');
+                                        navigate('/services');
                                     } else {
                                         navigate('/services');
                                     }
@@ -233,7 +233,7 @@ function Home() {
                                 if (token) {
                                     const role = localStorage.getItem('user_role');
                                     if (role === 'provider') {
-                                        navigate('/provider/services');
+                                        navigate('/services');
                                     } else {
                                         navigate('/services');
                                     }

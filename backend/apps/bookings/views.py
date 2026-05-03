@@ -13,17 +13,13 @@ class BookingListView(generics.ListCreateAPIView):
         user = self.request.user
         print(f"User: {user.username}, Is provider: {hasattr(user, 'is_provider')}")
         
-        # For customers - show their own bookings
         if hasattr(user, 'is_customer') and user.is_customer:
             return Booking.objects.filter(customer=user)
         
-        # For providers - show bookings for services they own
         if hasattr(user, 'is_provider') and user.is_provider:
-            # Get all service IDs owned by this provider
             provider_service_ids = Service.objects.filter(provider=user).values_list('id', flat=True)
             print(f"Provider {user.username} owns services: {list(provider_service_ids)}")
             
-            # Return bookings for those services
             bookings = Booking.objects.filter(service__id__in=provider_service_ids)
             print(f"Found {bookings.count()} bookings for this provider")
             return bookings
@@ -87,7 +83,6 @@ class BookingDetailView(generics.RetrieveUpdateAPIView):
         
         user = request.user
         
-        # Provider can accept/reject/complete
         if hasattr(user, 'is_provider') and user.is_provider:
             if booking.service.provider == user:
                 if new_status in ['accepted', 'rejected', 'completed']:
@@ -100,7 +95,6 @@ class BookingDetailView(generics.RetrieveUpdateAPIView):
                     status=status.HTTP_400_BAD_REQUEST
                 )
         
-        # Customer can cancel
         if hasattr(user, 'is_customer') and user.is_customer and booking.customer == user:
             if new_status == 'cancelled':
                 booking.status = new_status
