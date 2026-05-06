@@ -163,7 +163,7 @@ body {
 }
 
 .book-now-btn {
-    background: #2e7d32;
+    background: #41b3da;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -346,4 +346,16 @@ body {
     .service-price {
         font-size: 1.1rem;
     }
+}
+
+.chat-btn {
+    padding: 5px 20px;
+    background: #41b3da;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }

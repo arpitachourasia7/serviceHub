@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getConversations, getMessages, markMessagesRead, sendMessage as sendMessageAPI } from '../services/chat';
 import './Chat.css';
 
@@ -15,6 +15,10 @@ function Chat() {
     const wsRef = useRef(null);
     const typingTimeout = useRef(null);
     const navigate = useNavigate();
+
+
+
+    const location = useLocation();
 
     const userId = localStorage.getItem('user_id');
     const username = localStorage.getItem('username');
@@ -151,8 +155,18 @@ function Chat() {
         try {
             const res = await getConversations();
             const data = res.data.results || res.data;
-            console.log('Conversations fetched:', data);
             setConversations(data);
+
+            if (location.state?.conversationId) {
+                const targetConv = data.find(
+                    c => c.id === location.state.conversationId
+                );
+                if (targetConv) {
+                    setSelectedChat(targetConv);
+                    return;
+                }
+            }
+
             if (data.length > 0 && !selectedChat) {
                 setSelectedChat(data[0]);
             }
