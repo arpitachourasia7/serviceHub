@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Services.css';
+import { createConversation } from '../services/chat';
+
 
 function Services() {
     const [services, setServices] = useState([]);
@@ -134,6 +136,22 @@ function Services() {
         navigate('/bookings', { state: { preSelectedService: serviceId } });
     };
 
+    const handleChatWithProvider = async (service) => {
+        try {
+            const response = await createConversation(
+                service.provider_id,
+                service.id,
+                null
+            );
+            navigate('/chat', {
+                state: { conversationId: response.data.id }
+            });
+        } catch (error) {
+            alert('Could not start chat');
+        }
+    };
+
+
     const logout = () => {
         localStorage.clear();
         navigate('/');
@@ -192,10 +210,35 @@ function Services() {
                                 <p className="service-description">{service.description}</p>
                                 <div className="service-price">₹{service.price}</div>
 
-                                {userRole === 'customer' ? (
+                                {/* {userRole === 'customer' ? (
                                     <button className="book-now-btn" onClick={() => handleBookNow(service.id)}>
                                         BOOK NOW →
-                                    </button>
+                                    </button> */}
+
+
+
+
+
+
+
+                                {userRole === 'customer' ? (
+                                    <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
+                                        <button className="book-now-btn"
+                                            onClick={() => handleBookNow(service.id)}>
+                                            BOOK NOW →
+                                        </button>
+                                        <button className="chat-btn"
+                                            onClick={() => handleChatWithProvider(service)}>
+                                            Chat
+                                        </button>
+                                    </div>
+
+
+
+
+
+
+
                                 ) : userRole === 'provider' ? (
                                     <div className="service-actions">
                                         <button className="edit-btn" onClick={() => handleEdit(service)}>

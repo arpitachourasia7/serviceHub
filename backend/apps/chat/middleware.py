@@ -22,7 +22,6 @@ class TokenAuthMiddleware(BaseMiddleware):
             print(f"🔍 Token length: {len(token)}")
             
             try:
-                # Try to decode with simplejwt
                 from rest_framework_simplejwt.tokens import AccessToken
                 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
                 
@@ -60,7 +59,7 @@ class TokenAuthMiddleware(BaseMiddleware):
         from django.contrib.auth import get_user_model
         User = get_user_model()
         try:
-            # Handle UUID user IDs
+
             return User.objects.get(id=user_id)
         except User.DoesNotExist:
             print(f"User with ID {user_id} not found")

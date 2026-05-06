@@ -5,3 +5,9 @@ export const getService = (id) => api.get(`/services/${id}/`);
 export const createService = (data) => api.post('/services/', data);
 export const updateService = (id, data) => api.put(`/services/${id}/`, data);
 export const deleteService = (id) => api.delete(`/services/${id}/`);
+export const createConversation = (providerId, serviceId = null, bookingId = null) =>
+    api.post('/chat/conversations/create/', {
+        provider: providerId,
+        service: serviceId,
+        booking: bookingId
+    });
